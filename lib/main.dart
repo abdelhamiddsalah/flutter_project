@@ -8,8 +8,8 @@ import 'package:flutter_project/Features/Authentication/Presentation/View_model/
 import 'package:flutter_project/Features/Home/Presentation/Views_model/HomeCubit/home_cubit_cubit.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // تأكد من تهيئة فلاتر بشكل صحيح
-  await CacheHelper().init(); // تهيئة CacheHelper
+  WidgetsFlutterBinding.ensureInitialized(); 
+  await CacheHelper().init();
   runApp(const MyApp());
 }
 
@@ -21,9 +21,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => AuthCubitCubit(Dioconsumer(dio: Dio())), // Auth Cubit
+          create: (context) => AuthCubitCubit(Dioconsumer(dio: Dio())),
         ),
-        // يمكن إضافة المزيد من الـ BlocProviders هنا
          BlocProvider(
         create: (context) => HomeCubitCubit(Dioconsumer(dio: Dio())),
          ),

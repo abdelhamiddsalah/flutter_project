@@ -16,12 +16,13 @@ class Bottombar extends StatefulWidget {
 
 class _BottombarState extends State<Bottombar> {
   int _currentindex = 0;
-  
-  // Add the correct views for each BottomNavigationBar item
+  void _itemselect(int index) {
+    setState(() {
+      _currentindex = index;
+    });
+  }
   final List<Widget> pages = <Widget>[
-    HomeView(),
-    // Replace HomeView with CartView, SearchView, etc.
-    // Example:
+     HomeView(),
      HomeView(),
      HomeView(),
      HomeView(),
@@ -46,11 +47,5 @@ class _BottombarState extends State<Bottombar> {
         onTap: _itemselect,
       ),
     );
-  }
-
-  void _itemselect(int index) {
-    setState(() {
-      _currentindex = index;
-    });
   }
 }

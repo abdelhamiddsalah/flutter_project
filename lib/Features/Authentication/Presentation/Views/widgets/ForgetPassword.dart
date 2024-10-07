@@ -12,7 +12,7 @@ class ForgetPassword extends StatelessWidget {
      mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Maintext(text: 'Forget Password?',
-                     fontWeight: FontWeight.normal, size: 16, color: Colors.white,),
+        fontWeight: FontWeight.normal, size: 16, color: Colors.white,),
       ],
     );
   }

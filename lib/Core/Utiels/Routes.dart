@@ -5,6 +5,7 @@ import 'package:flutter_project/Features/Authentication/Presentation/Views/Login
 import 'package:flutter_project/Features/Authentication/Presentation/Views/Profile_view.dart';
 import 'package:flutter_project/Features/Authentication/Presentation/Views/Signup_view.dart';
 import 'package:flutter_project/Features/Home/Presentation/Views/Home_view.dart';
+import 'package:flutter_project/Features/Home/Presentation/Views/widgets/BottomBar.dart';
 import 'package:flutter_project/Features/StartingScreen/Presentation/Views/Splash_view.dart';
 import 'package:flutter_project/Features/StartingScreen/Presentation/Views/StartingScreen_view.dart';
 import 'package:go_router/go_router.dart';
@@ -22,7 +23,7 @@ abstract class Approutes {
                 return const Center(child: Text('error'));
               } else {
                 final isLoggedIn = snapshot.data ?? false;
-                return isLoggedIn ? const HomeView() : const SplashViewBody();
+                return isLoggedIn ? const Bottombar() : const SplashViewBody();
               }
             },
           );
@@ -62,6 +63,12 @@ abstract class Approutes {
         path: '/profile',
         builder: (BuildContext context, GoRouterState state) {
           return const ProfileView();
+        },
+      ),
+       GoRoute(
+        path: '/bottombar',
+        builder: (BuildContext context, GoRouterState state) {
+          return const Bottombar();
         },
       ),
     ],

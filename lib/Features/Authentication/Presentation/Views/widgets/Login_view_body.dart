@@ -23,15 +23,12 @@ class LoginViewBody extends StatelessWidget {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text("Login successful!")),
             );
-          //context.read<AuthCubitCubit>().profilruser();
-            GoRouter.of(context).go('/profile');
-
+            GoRouter.of(context).go('/bottombar');
           } else if(state is SignInLoading){
            ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text("Loading!")),
             );
           }
-
           else if (state is SignInFailure) {
             AwesomeDialog(
               context: context,
@@ -44,7 +41,6 @@ class LoginViewBody extends StatelessWidget {
               btnOkOnPress: () {},
             ).show();
           }
-
         },
         builder: (context, state) {
           return Scaffold(
